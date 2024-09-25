@@ -1,0 +1,36 @@
+<div>
+
+  <label for="nom">Entrez votre nom : </label>
+  <input type="text" id="nom" [(ngModel)]="nom">
+  <br>
+
+  <label for="police">Choisissez une police : </label>
+  <select id="police" [(ngModel)]="police">
+    <option value="Arial">Arial</option>
+    <option value="Times New Roman">Times New Roman</option>
+    <option value="Courier New">Courier New</option>
+    <option value="Verdana">Verdana</option>
+  </select>
+  <br>
+
+  <label for="taille">Taille de police : </label>
+  <input type="number" id="taille" [(ngModel)]="taille">
+  <br>
+  
+
+  <label>Alignement :</label>
+  <input type="radio" id="gauche" value="left" [(ngModel)]="alignement">
+  <label for="gauche">Gauche</label>
+  
+  <input type="radio" id="centre" value="center" [(ngModel)]="alignement">
+  <label for="centre">Centré</label>
+  
+  <input type="radio" id="droite" value="right" [(ngModel)]="alignement">
+  <label for="droite">Droite</label>
+  <br>
+</div>
+
+
+<div>
+  <p [ngStyle]="{ 'font-family': police, 'font-size.px': taille, 'text-align': alignement }">Bonjour {{ nom.toUpperCase() }} !</p>
+</div>
